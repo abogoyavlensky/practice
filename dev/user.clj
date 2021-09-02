@@ -3,7 +3,7 @@
             [clojure.test :as test]
             [hashp.core]))
 
-(repl/set-refresh-dirs "hackerrank")
+(repl/set-refresh-dirs "hackerrank" "dataart")
 
 (defn reset
   "Reload changed namespaces."

@@ -1,4 +1,4 @@
-(ns interview
+(ns dataart
   (:import [java.text SimpleDateFormat]
            [java.util Date]))
 
@@ -29,7 +29,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn my-func
-  [[a b] & {:keys [arg1 arg2] :or [:arg1 "default-1"]}]
+  [[a b] & {:keys [arg1 arg2] :or [arg1 "default-1"]}]
   [[b a] arg1 arg2])
 
 

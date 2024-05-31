@@ -11,6 +11,7 @@
 .hg/
 .clj-kondo/.cache
 lsp/
+.lsp/
 .vscode
 *.iml
 .idea/

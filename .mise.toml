@@ -1,0 +1,5 @@
+[tools]
+task = "3.37.2"
+java = "temurin-21.0.2+13.0.LTS"
+clojure = "1.11.3.1463"
+cljfmt = "0.12.0"

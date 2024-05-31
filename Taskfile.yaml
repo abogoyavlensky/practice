@@ -1,0 +1,20 @@
+version: '3'
+
+vars:
+  DIRS: dev hackerrank interview
+
+tasks:
+  deps:
+    desc: Install all dev deps
+    cmds:
+      - clojure -P
+
+  fmt:
+    desc: Fix code formatting
+    cmds:
+      - cljfmt fix {{ .DIRS }}
+
+  outdated:
+    desc: Upgrade outdated Clojure deps versions
+    cmds:
+      - clojure -M:outdated

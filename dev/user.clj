@@ -1,6 +1,6 @@
 (ns user
-  (:require [clojure.tools.namespace.repl :as repl]
-            [clojure.test :as test]
+  (:require [clojure.test :as test]
+            [clojure.tools.namespace.repl :as repl]
             [hashp.core]))
 
 (repl/set-refresh-dirs "hackerrank" "interview")
@@ -9,7 +9,6 @@
   "Reload changed namespaces."
   []
   (repl/refresh))
-
 
 (defn run-all-tests
   "Reload changed namespaces."

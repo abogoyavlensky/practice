@@ -1,6 +1,5 @@
 (ns compare-the-triplets)
 
-
 (comment
   (let [a-arg [17 28 30]
         b-arg [99 16 8]
@@ -14,5 +13,6 @@
                             (> a b) (update acc :a inc)
                             (< a b) (update acc :b inc)
                             :else acc)))
-                      {:a 0 :b 0}))]
+                      {:a 0
+                       :b 0}))]
     [(:a result) (:b result)]))

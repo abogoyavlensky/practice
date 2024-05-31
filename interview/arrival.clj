@@ -1,9 +1,6 @@
 (ns arrival
   (:require [clojure.string :as str]))
 
-
-
-
 (comment
  ; Есть дерево, у каждого элемента есть идентификатор, имя и дочерние элементы. Все это лежит в мапе по id.
  ; Нужно отфильтровать те элементы, имя которых содержит определенную подстроку.
@@ -19,16 +16,13 @@
               5 {:name "yyy"
                  :children []}}
         items (->> data
-                  (reduce-kv (fn [m k v]
-                               (if (str/includes? (:name v) "xxx")
-                                 (assoc m k v)
-                                 m)) {}))]
+                   (reduce-kv (fn [m k v]
+                                (if (str/includes? (:name v) "xxx")
+                                  (assoc m k v)
+                                  m)) {}))]
     (filter)))
 
-
-
-
-  ;; ищем "xxx", хотим получить:
+;; ищем "xxx", хотим получить:
   ;#{{:id 1
   ;   :name "Foo"
   ;   :children [3]}
@@ -40,9 +34,6 @@
   ;   :children []}})
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-
 
 (defn do-transformation [items-vec]
   (let [ids (atom #{})]

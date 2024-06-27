@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/merge-strings-alternately/
+
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
         word1_last_idx = len(word1) - 1

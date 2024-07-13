@@ -22,6 +22,4 @@ class Solution:
 
         return n == 0
 
-``
-
 print(Solution().canPlaceFlowers([0,0,1,0,0], 1))

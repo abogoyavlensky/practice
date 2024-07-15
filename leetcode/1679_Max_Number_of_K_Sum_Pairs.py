@@ -2,7 +2,6 @@
 # Topcis: Array, Hash Table, Two Pointers, Sorting
 
 from typing import List
-from collections import defaultdict
 
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:

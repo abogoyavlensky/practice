@@ -1,6 +1,7 @@
 # 
 # Topcis:
 from typing import List
+from itertools import islice
 
 class Solution:
     def func(self, num: int) -> float:
@@ -10,4 +11,8 @@ class Solution:
 
 ####################################
 
-print(3 // 2)
+# print(tuple(islice([1, 2, 3, 4, 5], 3)))
+
+
+for i in islice([1, 2, 3, 4, 5], 3):
+    print(i)

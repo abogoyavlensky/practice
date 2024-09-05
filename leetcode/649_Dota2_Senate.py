@@ -5,52 +5,37 @@ from collections import deque
 
 class Solution:
     def predictPartyVictory(self, senate: str) -> str:
-        stack = deque(list(senate))
-        voted = deque([])
-        not_voted = deque([])
-        winner = None
-
-        while not winner:
-            for _ in range(len(stack)):
-                i = stack.popleft()
-                if not not_voted:
-                    not_voted.append(i)
-                    not_voted.append(i)
-                else:
-                    left = not_voted[0]
-                    if left != i:
-                        not_voted.popleft()
-                        voted.append(left)
-                    else:
-                        not_voted.append(i)
-
-            for _ in range(len(not_voted)):
-                i = not_voted.popleft()
-                for i in 
-
-            if voted:
-                stack.extend(voted)
-            
-            if not_voted:
-                stack.extend(not_voted)
-            
-            voted = deque([])
-            not_voted = deque([])
-
-            if not stack:
-                raise Exception("Stack is empty!")
-
-            if len(set(stack)) == 1:
-                winner = stack.pop()
-                
+        radiant = deque()
+        dire = deque()
         
-        return 'Radiant' if winner == 'R' else 'Dire'
+        # Enqueue each senator based on their party
+        for i, s in enumerate(senate):
+            if s == 'R':
+                radiant.append(i)
+            else:
+                dire.append(i)
+        
+        n = len(senate)
+        
+        # Process the voting rounds
+        while radiant and dire:
+            r = radiant.popleft()
+            d = dire.popleft()
+            
+            # The senator with the smaller index bans the other
+            if r < d:
+                radiant.append(r + n)  # Re-queue the Radiant senator
+            else:
+                dire.append(d + n)     # Re-queue the Dire senator
+        
+        # Return the party that has senators remaining
+        return "Radiant" if radiant else "Dire"
 
 
 
-# print(Solution().predictPartyVictory(senate = "RD"))
-# print(Solution().predictPartyVictory(senate = "RDD"))
-# print(Solution().predictPartyVictory(senate = "RRRDDD"))
-# print(Solution().predictPartyVictory(senate = "DDRRRD"))
-# print(Solution().predictPartyVictory(senate = "DDRRR"))
+print(Solution().predictPartyVictory(senate = "RD"))
+print(Solution().predictPartyVictory(senate = "RDD"))
+print(Solution().predictPartyVictory(senate = "RRRDDD"))
+print(Solution().predictPartyVictory(senate = "DDRRRD"))
+print(Solution().predictPartyVictory(senate = "DDRRR"))
 print(Solution().predictPartyVictory(senate = "DRRDRDRDRDDRDRDR"))

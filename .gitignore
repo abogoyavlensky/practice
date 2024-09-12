@@ -16,3 +16,4 @@ lsp/
 *.iml
 .idea/
 .clj-kondo
+__pycache__
